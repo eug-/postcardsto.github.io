@@ -2,6 +2,7 @@ from json import dumps
 from os import listdir
 from os.path import isfile, join
 from re import sub
+from subprocess import call
 
 OUTPUT = join('src','data.js')
 INPUT_PATH = 'comix'
@@ -31,3 +32,6 @@ for title in issues:
 
 with open(OUTPUT, 'w') as f:
   f.write('var COMIX_DATA = {0};'.format(dumps(data)))
+
+call(['git', 'add', '.'])
+call(['git', 'commit', '-am "Changes commited by update.py"'])
