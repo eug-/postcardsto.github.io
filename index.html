@@ -6,6 +6,58 @@
     <link rel="stylesheet" href="src/styles.css">
   </head>
   <body>
-    <h1>Hello!</h1>
+    <div id="container"></div>
+    <script src="src/data.js"></script>
+    <script src="src/comix.js"></script>
+    <script>
+      var container = document.getElementById('container');
+      var titlePage = createTitlePage(COMIX_DATA);
+      var cellPage = createCell();
+
+      function addElement(element) {
+        if (!element.parentElement) {
+          container.appendChild(element);
+        }
+      }
+
+      function removeElement(element) {
+        if (element.parentElement) {
+          container.removeChild(element);
+        }
+      }
+
+      function route(hash) {
+        hash = hash.substring(1);
+        if (!hash) {
+          removeElement(cellPage);
+          addElement(titlePage);
+          return;
+        }
+
+        removeElement(titlePage);
+        addElement(cellPage);
+
+        var state = hash.split(':');
+        var issueIndex = state[0];
+        var pageIndex = state[1];
+        drawCell(cellPage, COMIX_DATA, issueIndex, pageIndex);
+      }
+      window.onhashchange = function() {
+        route(location.hash);
+      };
+      document.onkeyup = function(event) {
+        if (!cellPage.parentElement) {
+          // Not on a cell page.
+          return;
+        }
+        if (event.code === 'ArrowLeft' || event.keyCode === 37) {
+          document.getElementById('back').click();
+        }
+        if (event.code === 'ArrowRight' || event.keyCode === 39) {
+          document.getElementById('forward').click();
+        }
+      }
+      route(location.hash);
+    </script>
   </body>
 </html>

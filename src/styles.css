@@ -1,0 +1,97 @@
+body {
+  background: #000;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.title-page, .page {
+  background: #fff;
+  margin: 60px;
+}
+
+.title-page {
+  padding: 30px;
+}
+
+.issue {
+  display: inline-block;
+  margin: 20px;
+}
+
+.issue:hover {
+  cursor: pointer;
+}
+
+.issue img {
+  border: 2px solid transparent;
+  max-width: 400px;
+}
+
+.issue:hover img, .issue:active img {
+  border: 2px solid #000;
+  filter: invert(1);
+}
+
+.home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-image: url('cc.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
+}
+
+.home:hover {
+  opacity: 1;
+}
+
+.back-arrow, .forward-arrow {
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+}
+
+.back-arrow {
+  left: 0;
+  background-position: left 5px center;
+}
+
+.back-arrow:hover {
+  background-image: url('left.png');
+}
+
+.forward-arrow {
+  right: 0;
+  background-position: right 5px center;
+}
+
+.forward-arrow:hover {
+  background-image: url('right.png');
+}
+
+.cell {
+  width: 100%;
+  max-width: 800px;
+  max-height: 600px;
+  vertical-align: middle;
+  margin: 30px;
+}
+
+.stretchy {
+  display: inline-block;
+  height: 300px;
+  vertical-align: middle;
+  width: 0;
+}
+
+.progress {
+  background: #ddd;
+  height: 10px;
+}
