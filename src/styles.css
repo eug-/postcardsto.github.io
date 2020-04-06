@@ -7,11 +7,13 @@ body {
 
 .title-page, .page {
   background: #fff;
-  margin: 60px;
-}
-
-.title-page {
+  border-left: solid #000 60px;
+  border-right: solid #000 60px;
+  margin: 60px auto;
+  max-width: 900px;
+  min-width: 400px;
   padding: 30px;
+  position: relative;
 }
 
 .issue {
@@ -35,22 +37,20 @@ body {
 
 .home {
   position: absolute;
-  top: 0;
+  top: -60px;
   left: 0;
   right: 0;
   height: 60px;
   background-image: url('cc.png');
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.5;
-}
-
-.home:hover {
-  opacity: 1;
+  background-size: 38px 38px;
+  opacity: 0.2;
 }
 
 .back-arrow, .forward-arrow {
   background-repeat: no-repeat;
+  background-size: 30px 43px;
   display: inline-block;
   position: absolute;
   top: 0;
@@ -59,8 +59,8 @@ body {
 }
 
 .back-arrow {
-  left: 0;
-  background-position: left 5px center;
+  left: -50px;
+  background-position: left 0 top 200px;
 }
 
 .back-arrow:hover {
@@ -68,8 +68,8 @@ body {
 }
 
 .forward-arrow {
-  right: 0;
-  background-position: right 5px center;
+  right: -50px;
+  background-position: right 0 top 200px;
 }
 
 .forward-arrow:hover {
@@ -77,21 +77,14 @@ body {
 }
 
 .cell {
+  max-width: 700px;
   width: 100%;
-  max-width: 800px;
-  max-height: 600px;
   vertical-align: middle;
-  margin: 30px;
 }
 
 .stretchy {
   display: inline-block;
-  height: 300px;
+  height: 400px;
   vertical-align: middle;
   width: 0;
-}
-
-.progress {
-  background: #ddd;
-  height: 10px;
 }
