@@ -7,8 +7,9 @@ body {
 
 .title-page, .page {
   background: #fff;
-  border-left: solid #000 60px;
-  border-right: solid #000 60px;
+  border: 1px solid #000;
+  border-left-width: 60px;
+  border-right-width: 60px;
   margin: 60px auto;
   max-width: 900px;
   min-width: 400px;
@@ -59,21 +60,25 @@ body {
 }
 
 .back-arrow {
-  left: -50px;
+  background-image: url('left.png');
   background-position: left 0 top 200px;
+  left: -50px;
+  opacity: .3;
 }
 
 .back-arrow:hover {
-  background-image: url('left.png');
+  opacity: 1;
 }
 
 .forward-arrow {
-  right: -50px;
+  background-image: url('right.png');
   background-position: right 0 top 200px;
+  right: -50px;
+  opacity: .3;
 }
 
 .forward-arrow:hover {
-  background-image: url('right.png');
+  opacity: 1;
 }
 
 .cell {
