@@ -8,9 +8,16 @@ function createTitlePage(issues) {
     img.src = issue.cover;
     img.title = issue.title;
 
+    var date = document.createElement('span');
+    date.className = 'date';
+    date.innerText = new Date(issue.mod * 1000)
+      .toLocaleDateString();
+
     var link = document.createElement('a');
     link.className = 'issue';
     link.appendChild(img);
+    link.appendChild(document.createElement('br'));
+    link.appendChild(date);
     link.href = '#' + issueIndex;
 
     container.appendChild(link);

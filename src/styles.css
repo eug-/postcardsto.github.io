@@ -36,6 +36,12 @@ body {
   filter: invert(1);
 }
 
+.issue .date {
+  color: #666;
+  display: inline-block;
+  font-size: 12px;
+}
+
 .home {
   position: absolute;
   top: -60px;
