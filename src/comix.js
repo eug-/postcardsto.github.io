@@ -32,21 +32,16 @@ function createCell() {
   cell.id = 'cell';
   cell.className = 'cell';
 
-  var progress = document.createElement('div');
-  progress.id = 'progress';
-  progress.className = 'progress';
-
   var stretchy = document.createElement('div');
   stretchy.className = 'stretchy';
 
   var home = document.createElement('a');
+  home.id = 'progress';
   home.className = 'home';
-  home.href = '#';
 
   var container = document.createElement('div');
   container.className = 'page';
   container.appendChild(back);
-  container.appendChild(progress);
   container.appendChild(stretchy);
   container.appendChild(cell);
   container.appendChild(forward);
@@ -73,18 +68,23 @@ function drawCell(container, issues, issueIndex, pageIndex) {
   cell.src = issues[issueIndex].pages[pageIndex];
 
   var pages = issues[issueIndex].pages.length;
-  progress.style.width = (100 * (pageIndex + 1) / pages) + '%';
+  var position = (100 * (pageIndex + .5) / pages);
+  progress.style.backgroundPosition = 'left ' + position + '% center';
 
   if (!issues[issueIndex].pages[pageIndex - 1]) {
-    var previousIssue = (issues.length + issueIndex - 1) % issues.length;
-    back.href = '#' + previousIssue + ':' + (issues[previousIssue].pages.length - 1);
+    var previousIssue = issueIndex - 1;
+    if (previousIssue >= 0) {
+      back.href = '#' + previousIssue + ':' + (issues[previousIssue].pages.length - 1);
+    } else {
+      back.href = '#';
+    }
   } else {
     back.href = '#' + issueIndex + ':' + (pageIndex - 1);
   }
 
   if (!issues[issueIndex].pages[pageIndex + 1]) {
-    var nextIssue = (issueIndex + 1) % issues.length;
-    forward.href = '#' + nextIssue;
+    var nextIssue = issueIndex + 1;
+    forward.href = '#' + (nextIssue >= issues.length ? '' : nextIssue);
   } else {
     forward.href = '#' + issueIndex + ':' + (pageIndex + 1);
   }

@@ -7,10 +7,11 @@ body {
 
 .title-page, .page {
   background: #fff;
-  margin: 60px;
-}
-
-.title-page {
+  border-left: solid #000 60px;
+  border-right: solid #000 60px;
+  margin: 60px auto;
+  max-width: 900px;
+  min-width: 400px;
   padding: 30px;
 }
 
@@ -42,11 +43,8 @@ body {
   background-image: url('cc.png');
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.5;
-}
-
-.home:hover {
-  opacity: 1;
+  background-size: 38px 38px;
+  opacity: 0.2;
 }
 
 .back-arrow, .forward-arrow {
@@ -78,20 +76,12 @@ body {
 
 .cell {
   width: 100%;
-  max-width: 800px;
-  max-height: 600px;
   vertical-align: middle;
-  margin: 30px;
 }
 
 .stretchy {
   display: inline-block;
-  height: 300px;
+  height: 400px;
   vertical-align: middle;
   width: 0;
-}
-
-.progress {
-  background: #ddd;
-  height: 10px;
 }
