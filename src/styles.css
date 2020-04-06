@@ -13,6 +13,7 @@ body {
   max-width: 900px;
   min-width: 400px;
   padding: 30px;
+  position: relative;
 }
 
 .issue {
@@ -36,7 +37,7 @@ body {
 
 .home {
   position: absolute;
-  top: 0;
+  top: -60px;
   left: 0;
   right: 0;
   height: 60px;
@@ -49,6 +50,7 @@ body {
 
 .back-arrow, .forward-arrow {
   background-repeat: no-repeat;
+  background-size: 30px 43px;
   display: inline-block;
   position: absolute;
   top: 0;
@@ -57,8 +59,8 @@ body {
 }
 
 .back-arrow {
-  left: 0;
-  background-position: left 5px center;
+  left: -50px;
+  background-position: left 0 top 200px;
 }
 
 .back-arrow:hover {
@@ -66,8 +68,8 @@ body {
 }
 
 .forward-arrow {
-  right: 0;
-  background-position: right 5px center;
+  right: -50px;
+  background-position: right 0 top 200px;
 }
 
 .forward-arrow:hover {
