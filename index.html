@@ -29,6 +29,12 @@
       function route(hash) {
         hash = hash.substring(1);
         if (!hash) {
+          // Remove the pesky # mark.
+          var hashIndex = window.location.href.indexOf('#');
+          if (hashIndex > 0 && typeof window.history.replaceState == 'function') {
+            history.replaceState({}, '', window.location.href.substring(0, hashIndex));
+          }
+
           removeElement(cellPage);
           addElement(titlePage);
           return;

@@ -1,6 +1,6 @@
 from json import dumps
 from os import listdir
-from os.path import isfile, join
+from os.path import isfile, join, getmtime
 from re import sub
 from subprocess import call
 
@@ -28,7 +28,7 @@ for title in issues:
       pages.append(image_path)
 
   pages.sort(key=INT_SORT)
-  data.append({'title': title, 'cover':cover, 'pages': pages})
+  data.append({'title': title, 'cover':cover, 'pages': pages, 'mod': getmtime(path)})
 
 with open(OUTPUT, 'w') as f:
   f.write('var COMIX_DATA = {0};'.format(dumps(data)))
