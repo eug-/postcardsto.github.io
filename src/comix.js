@@ -2,7 +2,7 @@ function createTitlePage(issues) {
   var container = document.createElement('div');
   container.className = 'title-page';
 
-  for (var issueIndex = 0; issueIndex < issues.length; issueIndex++) {
+  for (var issueIndex = issues.length - 1; issueIndex >= 0; issueIndex--) {
     var issue = issues[issueIndex];
     var img = document.createElement('img');
     img.src = issue.cover;
