@@ -73,19 +73,13 @@ function drawCell(container, issues, issueIndex, pageIndex) {
   progress.style.backgroundPosition = 'left ' + position + '% center';
 
   if (!issues[issueIndex].pages[pageIndex - 1]) {
-    var previousIssue = issueIndex - 1;
-    if (previousIssue >= 0) {
-      back.href = '#' + previousIssue + ':' + (issues[previousIssue].pages.length - 1);
-    } else {
-      back.href = '#';
-    }
+    back.href = '#';
   } else {
     back.href = '#' + issueIndex + ':' + (pageIndex - 1);
   }
 
   if (!issues[issueIndex].pages[pageIndex + 1]) {
-    var nextIssue = issueIndex + 1;
-    forward.href = '#' + (nextIssue >= issues.length ? '' : nextIssue);
+    forward.href = '#';
   } else {
     forward.href = '#' + issueIndex + ':' + (pageIndex + 1);
   }
