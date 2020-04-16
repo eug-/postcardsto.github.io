@@ -11,7 +11,6 @@ function createTitlePage(issues) {
     var link = document.createElement('a');
     link.className = 'issue';
     link.appendChild(img);
-    link.appendChild(document.createElement('br'));
     link.href = '#' + issueIndex;
 
     container.appendChild(link);
