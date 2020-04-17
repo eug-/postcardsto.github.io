@@ -2,7 +2,7 @@ function createTitlePage(issues) {
   var container = document.createElement('div');
   container.className = 'title-page';
 
-  for (var issueIndex = 0; issueIndex < issues.length; issueIndex++) {
+  for (var issueIndex = issues.length - 1; issueIndex >= 0; issueIndex--) {
     var issue = issues[issueIndex];
     var img = document.createElement('img');
     img.src = issue.cover;
@@ -11,7 +11,6 @@ function createTitlePage(issues) {
     var link = document.createElement('a');
     link.className = 'issue';
     link.appendChild(img);
-    link.appendChild(document.createElement('br'));
     link.href = '#' + issueIndex;
 
     container.appendChild(link);
@@ -73,19 +72,13 @@ function drawCell(container, issues, issueIndex, pageIndex) {
   progress.style.backgroundPosition = 'left ' + position + '% center';
 
   if (!issues[issueIndex].pages[pageIndex - 1]) {
-    var previousIssue = issueIndex - 1;
-    if (previousIssue >= 0) {
-      back.href = '#' + previousIssue + ':' + (issues[previousIssue].pages.length - 1);
-    } else {
-      back.href = '#';
-    }
+    back.href = '#';
   } else {
     back.href = '#' + issueIndex + ':' + (pageIndex - 1);
   }
 
   if (!issues[issueIndex].pages[pageIndex + 1]) {
-    var nextIssue = issueIndex + 1;
-    forward.href = '#' + (nextIssue >= issues.length ? '' : nextIssue);
+    forward.href = '#';
   } else {
     forward.href = '#' + issueIndex + ':' + (pageIndex + 1);
   }
