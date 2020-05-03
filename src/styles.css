@@ -5,16 +5,19 @@ body {
   text-align: center;
 }
 
+.container {
+  margin: 0 auto;
+  max-width: 1080px;
+  min-width: 520px;
+}
+
 .title-page, .page {
   background: #fff;
   border: 1px solid #000;
-  border-left-width: 60px;
-  border-right-width: 60px;
-  margin: 60px auto;
-  max-width: 900px;
-  min-width: 400px;
+  margin: 60px;
   padding: 30px;
   position: relative;
+  border-image: url(border.png) 5 5 5 5 repeat repeat;
 }
 
 .title-page {
@@ -22,17 +25,16 @@ body {
 }
 
 .title-page .title {
-  position: absolute;
-  width: 100%;
-  height: 85px;
-  left: 0;
-  right: 0;
-  top: -100px;
   background-image:  url('logo.png');
-  background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
-
+  background-size: contain;
+  height: 85px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: -100px;
+  width: 100%;
 }
 
 .issue {
@@ -45,13 +47,13 @@ body {
 }
 
 .issue img {
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   max-width: 400px;
 }
 
 .issue:hover img, .issue:active img {
-  border: 2px solid #000;
   filter: invert(1);
+  border-image: url(border.png) 5 5 5 5 repeat repeat;
 }
 
 .home {
