@@ -1,9 +1,6 @@
 function createTitlePage(issues) {
   var container = document.createElement('div');
   container.className = 'title-page';
-  var title = document.createElement('div');
-  title.className = 'title';
-  container.appendChild(title);
 
   for (var issueIndex = issues.length - 1; issueIndex >= 0; issueIndex--) {
     var issue = issues[issueIndex];
