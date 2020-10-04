@@ -15,6 +15,5 @@ for comic in data:
 
     resized = (500, int(500 * (1.0*original[1]/original[0])))
     print "resizing", comic["title"], original, resized
-    sized_cover = cover.resize(resized)
-    print sized_cover.size
+    sized_cover = cover.resize(resized, Image.LANCZOS)
     sized_cover.save(comic['cover'])
