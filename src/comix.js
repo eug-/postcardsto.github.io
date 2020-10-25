@@ -64,8 +64,15 @@ function drawCell(container, issues, issueIndex, pageIndex) {
   var forward = document.getElementById('forward');
   var cell = document.getElementById('cell');
   var progress = document.getElementById('progress');
-
+  var onLoad = function() {
+    if (cell.classList) {
+      cell.classList.toggle('wide', cell.width > cell.height);
+    }
+    cell.removeEventListener('load', onLoad);
+  };
+  cell.src = '';
   cell.src = issues[issueIndex].pages[pageIndex];
+  cell.addEventListener('load', onLoad);
 
   var pages = issues[issueIndex].pages.length;
   var position = (100 * (pageIndex + .5) / pages);
