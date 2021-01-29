@@ -92,6 +92,8 @@ body {
 
 .cell.wide {
   max-width: 100%;
+  width: auto;
+  max-height: 700px;
 }
 
 .stretchy {
