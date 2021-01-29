@@ -1,0 +1,13 @@
+# General
+.DS_Store
+.LSOverride
+
+# Thumbnails
+._*
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Folder config file
+[Dd]esktop.ini

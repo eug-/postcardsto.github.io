@@ -10,7 +10,7 @@ with open(INPUT, 'r') as f:
 for comic in data:
   with Image.open(comic['cover']) as cover:
     original = cover.size
-    if original[0] <= 500:
+    if original[0] <= 501:
       continue
 
     resized = (500, int(500 * (1.0*original[1]/original[0])))
