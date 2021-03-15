@@ -19,7 +19,7 @@ for title in issues:
   pages = []
   cover = None
   for f in listdir(path):
-    if not isfile(join(path, f)) or not f.lower().endswith(IMAGE_EXT):
+    if not isfile(join(path, f)) or not f.lower().endswith(IMAGE_EXT) or f.startswith('.'):
       continue
     image_path = '{0}/{1}/{2}'.format(INPUT_PATH, title, f)
     if 'cover' in f:
