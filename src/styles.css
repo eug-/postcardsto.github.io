@@ -3,6 +3,11 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
+  font-family: arial, sans-serif;
+}
+
+.sub {
+  margin: 40px;
 }
 
 .container {
@@ -18,6 +23,12 @@ body {
   padding: 30px;
   position: relative;
   border-image: url(border.png) 5 5 5 5 repeat repeat;
+}
+
+.book {
+  width: 400px;
+  border-radius: 20px;
+  margin: 20px 0;
 }
 
 .issue {
