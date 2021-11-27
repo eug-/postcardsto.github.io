@@ -6,7 +6,8 @@ body {
   font-family: arial, sans-serif;
 }
 
-.sub {
+h2.sub {
+  font-weight: normal;
   margin: 40px;
 }
 
@@ -26,9 +27,73 @@ body {
 }
 
 .book {
-  width: 400px;
   border-radius: 20px;
   margin: 20px 0;
+  width: 400px;
+}
+
+a.book-link {
+  background: #000;
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  margin: 30px auto 60px;
+  padding: 25px 50px 0;
+  text-decoration: none;
+  position: relative;
+  filter: invert(1);
+  width: 400px;
+  border: 1px solid transparent;
+}
+
+a.book-link::after {
+  content: '';
+  display: block;
+  margin: 20px 0 0;
+  border-bottom: 1px solid #333;
+}
+
+a.book-link:hover::after {
+  border-bottom-color: transparent;
+}
+
+a.book-link:hover {
+  background: #fff;
+  color: #111;
+  border-image: url(border.png) 5 5 5 5 repeat repeat;
+}
+
+.book-link img {
+  display: inline-block;
+  height: 25px;
+  margin-left: -25px;
+  vertical-align: middle;
+}
+
+.book-link:hover img {
+  filter: invert(1);
+}
+
+.book-name {
+  font-weight: bold;
+  display: block;
+}
+
+.submit-button {
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 10px 10px 30px;
+  padding: 15px 25px;
+  text-decoration: underline;
+}
+
+.submit-button:hover {
+  filter: invert(1);
+  border-image: url(border.png) 5 5 5 5 repeat repeat;
 }
 
 .issue {

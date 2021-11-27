@@ -16,49 +16,12 @@
           All 23 issues collected in a single, 250-page, paperback volume.<br/>
           Limited to 100 copies! $20
         </h2>
-
-        <div id="paypal-button-container"></div>
-        <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
-        <script>
-          function initPayPalButton() {
-            paypal.Buttons({
-              style: {
-                shape: 'pill',
-                color: 'black',
-                layout: 'horizontal',
-                label: 'buynow',
-                tagline: false
-              },
-
-              createOrder: function(data, actions) {
-                return actions.order.create({
-                  purchase_units: [{"description":"Covid Comix - the book! All 23 issues collected in a single, 250-page, paperback volume. Limited to 100 copies!","amount":{"currency_code":"USD","value":20,"breakdown":{"item_total":{"currency_code":"USD","value":15},"shipping":{"currency_code":"USD","value":5},"tax_total":{"currency_code":"USD","value":0}}}}]
-                });
-              },
-
-              onApprove: function(data, actions) {
-                return actions.order.capture().then(function(orderData) {
-
-                  // Full available details
-                  console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-
-                  // Show a success message within this page, e.g.
-                  const element = document.getElementById('paypal-button-container');
-                  element.innerHTML = '';
-                  element.innerHTML = '<h3>Thank you for your support.</h3>';
-
-                  // Or go to another URL:  actions.redirect('thank_you.html');
-
-                });
-              },
-
-              onError: function(err) {
-                console.log(err);
-              }
-            }).render('#paypal-button-container');
-          }
-          initPayPalButton();
-        </script>
+        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+          <input type="hidden" name="cmd" value="_s-xclick">
+          <input type="hidden" name="hosted_button_id" value="DLRYUT3QX4TQW">
+          <button class="submit-button" border="0" type="submit">Order a copy!</button>
+          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
       </div>
     </div>
   </body>
