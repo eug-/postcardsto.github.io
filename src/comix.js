@@ -2,7 +2,7 @@ function createTitlePage(issues) {
   var container = document.createElement('div');
   container.className = 'title-page';
 
-  // container.appendChild(getBookLink());
+  container.appendChild(getBookLink());
 
   for (var issueIndex = issues.length - 1; issueIndex >= 0; issueIndex--) {
     var issue = issues[issueIndex];
