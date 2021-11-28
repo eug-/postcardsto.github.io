@@ -26,11 +26,13 @@ h2.sub {
   border-image: url(border.png) 5 5 5 5 repeat repeat;
 }
 
-.book {
-  border-radius: 20px;
-  margin: 20px 0;
-  width: 400px;
-}
+  .book {
+    width: 400px;
+    margin: 5px;
+    border: 2px solid #000;
+    border-image: url(border.png) 5 5 5 5 repeat repeat;
+    border-radius: 5px;
+  }
 
 a.book-link {
   background: #000;
